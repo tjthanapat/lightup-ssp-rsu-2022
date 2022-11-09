@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const Root = () => {
   return (
     <div className="min-h-screen flex items-center">
-      <div className='m-10 sm:mx-16'>
+      <div className="m-10 sm:mx-16">
         <h1 className="text-3xl">กิจกรรมเปิดโลกทัศน์ทางการศึกษาและอาชีพ</h1>
         <h2 className="text-xl">ณ มหาวิทยาลัยรังสิต</h2>
         <h2 className="text-xl">วันที่ x พฤศจิกายน 2565</h2>
@@ -18,8 +18,17 @@ const Root = () => {
             </button>
           </Link>
         </div>
-        <footer className='mt-12'>
-          <p className='text-sm text-gray-500'>Created by tjthanapat</p>
+        <footer className="mt-12">
+          <p className="text-sm text-gray-500">
+            Created by{' '}
+            <a
+              href="https://github.com/tjthanapat"
+              target={'_blank'}
+              rel="noreferrer"
+            >
+              tjthanapat
+            </a>
+          </p>
         </footer>
       </div>
     </div>
