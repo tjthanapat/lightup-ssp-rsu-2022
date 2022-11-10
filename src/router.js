@@ -3,6 +3,7 @@ import {
   Route,
 } from "react-router-dom";
 import Register from "./routes/register";
+import RegistrationStat from "./routes/registrationstat";
 import Root from "./routes/root";
 
 const router = createBrowserRouter([
@@ -13,6 +14,10 @@ const router = createBrowserRouter([
   {
     path: "/register",
     element: <Register/>,
+  },
+  {
+    path: "/registrationstat",
+    element: <RegistrationStat/>,
   },
 ]);
 

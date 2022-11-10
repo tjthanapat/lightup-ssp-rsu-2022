@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import ErrorPage from './ErrorPage';
-import LoadingPage from './LoadingPage';
+import ErrorPage from '../../components/ErrorPage';
+import LoadingPage from '../../components/LoadingPage';
 import RegisterForm from './RegisterForm';
 import SuccessPage from './SuccessPage';
 

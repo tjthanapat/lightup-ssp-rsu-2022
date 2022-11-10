@@ -11,7 +11,7 @@ const validateStudentId = async (studentId) => {
   }
 };
 
-const register = async (student, selectedBooths) => {
+export const register = async (student, selectedBooths) => {
   try {
     const isStudentIdAvailable = await validateStudentId(student.id);
     if (!isStudentIdAvailable) {
@@ -32,5 +32,3 @@ const register = async (student, selectedBooths) => {
     throw err;
   }
 };
-
-export { register };
