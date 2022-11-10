@@ -32,7 +32,7 @@ const ClassroomStat = (props) => {
           <div class="overflow-x-auto my-5">
             <table class="table-auto border-collapse">
               <thead>
-                <tr className='bg-gray-100'>
+                <tr className="bg-gray-100">
                   <th className="p-2 border border-slate-300">เลขที่</th>
                   <th className="p-2 border border-slate-300">
                     เลขประจำตัวนักเรียน

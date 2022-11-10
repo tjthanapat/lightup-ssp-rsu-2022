@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import ErrorPage from '../../components/ErrorPage';
 import LoadingPage from '../../components/LoadingPage';
+import Footer from '../../components/Footer';
 
 import { getStudents } from '../../functions/registrationStat';
 import StatByBooth from './StatByBooth';
@@ -44,18 +45,7 @@ const RegistrationStat = () => {
           </div>
           <StatByClassroom students={students} />
           <StatByBooth students={students} />
-          <footer className="mt-12">
-            <p className="text-sm text-gray-500">
-              Created by{' '}
-              <a
-                href="https://github.com/tjthanapat"
-                target={'_blank'}
-                rel="noreferrer"
-              >
-                tjthanapat
-              </a>
-            </p>
-          </footer>
+          <Footer/>
         </div>
       </div>
     );

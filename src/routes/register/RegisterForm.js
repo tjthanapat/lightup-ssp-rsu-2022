@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Footer from '../../components/Footer';
 import BoothSelection from './BoothSelection';
 import AgreementCheckbox from './AgreementCheckbox';
 import StudentDataInputs from './StudentDataInputs';
@@ -98,18 +99,7 @@ const RegisterForm = (props) => {
             </button>
           </div>
         </div>
-        <footer className="mt-12">
-          <p className="text-sm text-gray-500">
-            Created by{' '}
-            <a
-              href="https://github.com/tjthanapat"
-              target={'_blank'}
-              rel="noreferrer"
-            >
-              tjthanapat
-            </a>
-          </p>
-        </footer>
+        <Footer/>
       </div>
     </div>
   );
