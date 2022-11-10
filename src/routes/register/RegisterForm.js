@@ -37,7 +37,18 @@ const RegisterForm = (props) => {
   const handleClickSubmit = async () => {
     try {
       setLoading(true);
-      await register(student, selectedBooths);
+      const { id, title, firstName, lastName, classroom, roll, phone } =
+        student;
+      const studentData = {
+        id,
+        title,
+        firstName,
+        lastName,
+        classroom,
+        roll: parseInt(roll),
+        phone,
+      };
+      await register(studentData, selectedBooths);
       setSuccess(true);
     } catch (err) {
       setError(err);

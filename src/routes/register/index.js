@@ -9,13 +9,13 @@ const Register = () => {
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState(false);
   const [student, setStudent] = useState({
+    id: '',
     title: '',
     firstName: '',
     lastName: '',
-    id: '',
+    classroom: '',
     roll: '',
     phone: '',
-    classroom: '',
   });
   const [selectedBooths, setSelectedBooths] = useState([]);
 
