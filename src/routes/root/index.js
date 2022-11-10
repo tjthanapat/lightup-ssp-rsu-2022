@@ -5,7 +5,7 @@ const Root = () => {
   return (
     <div className="min-h-screen flex items-center">
       <div className="m-10 sm:mx-16">
-        <h1 className="text-3xl">กิจกรรมเปิดโลกทัศน์ทางการศึกษาและอาชีพ</h1>
+        <h1 className="text-4xl">กิจกรรมเปิดโลกทัศน์ทางการศึกษาและอาชีพ</h1>
         <h2 className="text-xl">ณ มหาวิทยาลัยรังสิต</h2>
         <h2 className="text-xl">วันที่ 25 พฤศจิกายน 2565</h2>
         <div className="mt-10">

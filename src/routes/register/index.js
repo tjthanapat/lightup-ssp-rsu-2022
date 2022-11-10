@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import ErrorPage from './ErrorPage';
 import LoadingPage from './LoadingPage';
 import RegisterForm from './RegisterForm';
@@ -18,10 +18,6 @@ const Register = () => {
     classroom: '',
   });
   const [selectedBooths, setSelectedBooths] = useState([]);
-
-  useEffect(() => {
-    console.log(student);
-  }, [student]);
 
   if (success) {
     return <SuccessPage student={student} />;

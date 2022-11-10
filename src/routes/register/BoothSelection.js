@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 
@@ -7,10 +7,6 @@ const max_selection = 4;
 
 const BoothSelection = (props) => {
   const { selectedBooths, setSelectedBooths } = props;
-
-  useEffect(() => {
-    console.log(selectedBooths);
-  }, [selectedBooths]);
 
   const handleChangeSelectBooth = (event) => {
     const selectedBooth = event.target.value;
@@ -42,7 +38,7 @@ const BoothSelection = (props) => {
       {booth_groups.map((booth_group) => {
         return (
           <div key={booth_group.id} className="my-5">
-            <h2 className='text-xl'>{booth_group.name}</h2>
+            <h2 className="text-xl">{booth_group.name}</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1">
               {booth_group.booths.map((booth) => {
                 return (
