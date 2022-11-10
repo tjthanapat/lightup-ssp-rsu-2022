@@ -38,7 +38,6 @@ const ClassroomStat = (props) => {
                     เลขประจำตัวนักเรียน
                   </th>
                   <th className="p-2 border border-slate-300">ชื่อ-นามสกุล</th>
-                  <th className="p-2 border border-slate-300">โทรศัพท์</th>
                 </tr>
               </thead>
               <tbody>
@@ -53,9 +52,6 @@ const ClassroomStat = (props) => {
                     <td className="p-2 border border-slate-300">
                       {student.title}
                       {student.firstName} {student.lastName}
-                    </td>
-                    <td className="p-2 border border-slate-300">
-                      {student.phone}
                     </td>
                   </tr>
                 ))}
