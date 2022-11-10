@@ -4,17 +4,28 @@ const SuccessPage = (props) => {
   const { student } = props;
 
   return (
-    <div className="min-h-screen flex justify-center items-center">
-      <div className="max-w-screen-lg my-20 mx-5">
-        <h1 className="text-3xl text-center">ลงทะเบียนสำเร็จ</h1>
-        <p>
+    <div className="min-h-screen">
+      <div className="max-w-screen-md my-20 mx-auto p-5">
+        <h1 className="text-3xl">ลงทะเบียนสำเร็จ</h1>
+        <p className="mt-5">
           {!!student.title ? student.title : '<title>'}
           {!!student.firstName ? student.firstName : '<firstName>'}{' '}
           {!!student.firstName ? student.lastName : '<lastName>'}{' '}
           เลขประจำตัวนักเรียน {!!student.id ? student.id : '<id>'}{' '}
           ได้ทำการลงทะเบียนเรียบร้อยแล้ว
         </p>
-        <p>Mockup เท่านั้นยังไม่ได้เก็บข้อมูลลง database</p>
+        <footer className="mt-12">
+          <p className="text-sm text-gray-500">
+            Created by{' '}
+            <a
+              href="https://github.com/tjthanapat"
+              target={'_blank'}
+              rel="noreferrer"
+            >
+              tjthanapat
+            </a>
+          </p>
+        </footer>
       </div>
     </div>
   );

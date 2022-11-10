@@ -1,23 +1,24 @@
-import React, { useState,useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import BoothSelection from './BoothSelection';
 import AgreementCheckbox from './AgreementCheckbox';
 import StudentDataInputs from './StudentDataInputs';
+import { register } from '../../functions/register';
 
 const validateStudentData = (student) => {
-  const id = student.id.match("^[0-9]{5}$")
-  const title = student.title !== ''
-  const firstName = student.firstName.match("^[\u0E00-\u0E7F .]{1,50}$")
-  const lastName = student.lastName.match("^[\u0E00-\u0E7F .]{1,50}$")
-  const classroom = student.classroom !== ''
-  const roll = student.roll.match("^[0-9]{1,2}$")
-  const phone = student.phone.match("^[0]{1}[0-9]{9}$")
+  const id = student.id.match('^[0-9]{5}$');
+  const title = student.title !== '';
+  const firstName = student.firstName.match('^[\u0E00-\u0E7F .]{1,50}$');
+  const lastName = student.lastName.match('^[\u0E00-\u0E7F .]{1,50}$');
+  const classroom = student.classroom !== '';
+  const roll = student.roll.match('^[0-9]{1,2}$');
+  const phone = student.phone.match('^[0]{1}[0-9]{9}$');
 
   if (id && title && firstName && lastName && classroom && roll && phone) {
-    return true
+    return true;
   } else {
-    return false
+    return false;
   }
-}
+};
 
 const RegisterForm = (props) => {
   const {
@@ -26,30 +27,38 @@ const RegisterForm = (props) => {
     selectedBooths,
     setSelectedBooths,
     setLoading,
+    setError,
     setSuccess,
   } = props;
 
   const [checkedAgreement, setCheckedAgreement] = useState(false);
   const [allowedSubmit, setAllowedSubmit] = useState(false);
 
-  const handleClickSubmit = () => {
-    setLoading(true);
-    setTimeout(() => {
+  const handleClickSubmit = async () => {
+    try {
+      setLoading(true);
+      await register(student, selectedBooths);
       setSuccess(true);
-    }, 1000);
+    } catch (err) {
+      setError(err);
+    }
   };
 
-  useEffect(()=>{
-    if(selectedBooths.length==4 && validateStudentData(student) && checkedAgreement){
-      setAllowedSubmit(true)
+  useEffect(() => {
+    if (
+      selectedBooths.length === 4 &&
+      validateStudentData(student) &&
+      checkedAgreement
+    ) {
+      setAllowedSubmit(true);
     } else {
-      setAllowedSubmit(false)
+      setAllowedSubmit(false);
     }
-  },[student,selectedBooths,checkedAgreement])
+  }, [student, selectedBooths, checkedAgreement]);
 
   return (
-    <div className="min-h-screen flex justify-center items-center">
-      <div className="max-w-screen-lg my-20 mx-5">
+    <div className="min-h-screen">
+      <div className="max-w-screen-md my-20 mx-auto p-5">
         <h1 className="text-3xl">ลงทะเบียน</h1>
         <div className="my-5">
           <h2 className="text-2xl mb-3">ข้อมูลทั่วไป</h2>
@@ -62,20 +71,34 @@ const RegisterForm = (props) => {
             setSelectedBooths={setSelectedBooths}
           />
         </div>
-        <div>
+        <div className="mt-10">
           <AgreementCheckbox
             checked={checkedAgreement}
             setChecked={setCheckedAgreement}
           />
-          <button
-            onClick={handleClickSubmit}
-            type="button"
-            className="border border-blue-500 bg-blue-500 hover:bg-blue-600 text-white rounded-md w-full my-5 px-4 py-2 transition duration-500 ease select-none disabled:bg-slate-300 disabled:border-slate-300 disabled:cursor-not-allowed"
-            disabled={!allowedSubmit}
-          >
-            บันทึก
-          </button>
+          <div className="mt-8">
+            <button
+              onClick={handleClickSubmit}
+              type="button"
+              className="border border-teal-500 bg-teal-500 hover:bg-teal-600 text-white rounded-md px-8 py-2 transition duration-500 ease select-none disabled:bg-slate-300 disabled:border-slate-300 disabled:cursor-not-allowed"
+              disabled={!allowedSubmit}
+            >
+              ลงทะเบียน
+            </button>
+          </div>
         </div>
+        <footer className="mt-12">
+          <p className="text-sm text-gray-500">
+            Created by{' '}
+            <a
+              href="https://github.com/tjthanapat"
+              target={'_blank'}
+              rel="noreferrer"
+            >
+              tjthanapat
+            </a>
+          </p>
+        </footer>
       </div>
     </div>
   );
