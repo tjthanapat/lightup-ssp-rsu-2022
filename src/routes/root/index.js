@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Footer from '../../components/Footer';
 
 const Root = () => {
   return (
@@ -18,18 +19,7 @@ const Root = () => {
             </button>
           </Link>
         </div>
-        <footer className="mt-12">
-          <p className="text-sm text-gray-500">
-            Created by{' '}
-            <a
-              href="https://github.com/tjthanapat"
-              target={'_blank'}
-              rel="noreferrer"
-            >
-              tjthanapat
-            </a>
-          </p>
-        </footer>
+        <Footer/>
       </div>
     </div>
   );
