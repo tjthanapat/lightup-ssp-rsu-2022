@@ -34,6 +34,7 @@ const RegistrationStat = () => {
       <div className="min-h-screen">
         <div className="max-w-screen-lg my-20 mx-auto p-5">
           <h1 className="text-3xl">Registration Stat</h1>
+          <p>กิจกรรมเปิดโลกทัศน์ทางการศึกษาและอาชีพ ณ มหาวิทยาลัยรังสิต วันที่ 25 พฤศจิกายน 2565</p>
           <div className="my-10 p-5 bg-gray-100 rounded-lg">
             <p>ผู้ลงทะเบียนทั้งหมด</p>
             <p className="text-right">

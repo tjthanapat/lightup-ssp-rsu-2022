@@ -24,6 +24,7 @@ export const getStudentsByClassroom = (students) => {
     const studentsInClassroom = students.filter(
       (student) => student.classroom === classroom.id
     );
+    studentsInClassroom.sort((a,b) => a.roll - b.roll)
     studentsByClassroom.push({
       classroomId: classroom.id,
       classroomName: classroom.name,
