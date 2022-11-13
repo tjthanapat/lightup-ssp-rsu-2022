@@ -40,4 +40,15 @@ const Register = () => {
   }
 };
 
-export default Register;
+const ClosedRegister = () => {
+  return (
+    <ErrorPage
+      error={{
+        name: 'RegistrationClosed',
+        message: 'ระบบไม่เปิดให้ลงทะเบียน',
+      }}
+    />
+  );
+};
+
+export default ClosedRegister;
