@@ -15,14 +15,15 @@ const StudentInBoothAccordion = (props) => {
         </h6>
       </AccordionSummary>
       <AccordionDetails>
-        <div className="grid grid-cols-2 sm:grid-cols-4">
+        <p className="mb-3">สามารถกดที่รอบที่ต้องการเพื่อดูรายชื่อ</p>
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
           {booth.studentsInRound.map((round, index) => (
             <StudentInBoothRoundList
-              key={`${booth.boothId}-${index+1}`}
+              key={`${booth.boothId}-${index + 1}`}
               boothId={booth.boothId}
               boothName={booth.boothName}
               studentsInBoothRound={round}
-              roundNum={index+1}
+              roundNum={index + 1}
             />
           ))}
         </div>
